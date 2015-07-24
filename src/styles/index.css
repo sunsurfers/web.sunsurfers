@@ -1,0 +1,11 @@
+/* use @import url(some.less); for adding another less-file to project */
+
+/*@import "~bootstrap/less/bootstrap";*/
+
+body {
+  background: deeppink;
+}
+h1 {
+  color: white;
+  font-family: Tahoma, Arial, sans-serif;
+}
