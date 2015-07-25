@@ -2,17 +2,18 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval',
+  //devtool: 'eval',
   //devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3333',
     'webpack/hot/only-dev-server',
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/public/build/'
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/assets/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -32,10 +33,10 @@ module.exports = {
       //'css?root=./build/',
       loaders: [
         'style',
+        'css-loader',
         'raw'
       ]
     },
-
       // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
       // loads bootstrap's css.
       {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff"},
