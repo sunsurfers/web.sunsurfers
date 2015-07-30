@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { createDispatcher, createRedux, composeStores } from 'redux'
 import { Provider } from 'redux/react'
 
-import { loggerMiddleware, thunkMiddleware } from './middleware'
+import { loggerMiddleware, thunkMiddleware } from './core/middleware'
 
 import * as stores from './stores'
 import renderRoutes from './routes'

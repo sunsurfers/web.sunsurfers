@@ -3,13 +3,16 @@ var webpack = require('webpack');
 
 module.exports = {
   //devtool: 'eval',
-  //devtool: 'source-map',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#source-map',
+  //devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3333',
     'webpack/hot/only-dev-server',
     './src/index'
   ],
+  devServer: {
+    headers: { "Access-Control-Allow-Origin": "*" }
+  },
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist'),
