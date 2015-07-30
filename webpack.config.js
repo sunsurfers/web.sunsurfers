@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var AutoInstallPlugin = require('auto-install-webpack-plugin');
 
 module.exports = {
   //devtool: 'eval',
@@ -11,7 +12,7 @@ module.exports = {
     './src/index'
   ],
   devServer: {
-    headers: { "Access-Control-Allow-Origin": "*" }
+    headers: {"Access-Control-Allow-Origin": "*"}
   },
   output: {
     filename: 'bundle.js',
@@ -20,26 +21,27 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new AutoInstallPlugin({save: true})
   ],
   resolve: {
     extensions: ['', '.js']
   },
   module: {
     loaders: [
-    {
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      exclude: /node_modules/
-    }, {
-      test: /\.css/,
-      //'css?root=./build/',
-      loaders: [
-        'style',
-        'css-loader',
-        'raw'
-      ]
-    },
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        exclude: /node_modules/
+      }, {
+        test: /\.css/,
+        //'css?root=./build/',
+        loaders: [
+          'style',
+          'css-loader',
+          'raw'
+        ]
+      },
       // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
       // loads bootstrap's css.
       {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff"},
