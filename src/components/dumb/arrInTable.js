@@ -29,7 +29,7 @@ export default class ArrInTable extends React.Component {
 
   render() {
     const {sortProperty, isNormalDirection} = this.state;
-    const {primary, children} = this.props;
+    const {children} = this.props;
     var arr = sortBy(children, sortProperty);
 
     if(!isNormalDirection) {
@@ -42,7 +42,7 @@ export default class ArrInTable extends React.Component {
       <thead>
       <tr>
         {Object.keys(arr[0]).map(function (key) {
-          return (<th key={key} onClick={onChangeSort}>{key}</th>)
+          return (<th key={key} onClick={onChangeSort} style={{cursor: 'pointer'}}>{key}</th>)
         })}
       </tr>
       </thead>

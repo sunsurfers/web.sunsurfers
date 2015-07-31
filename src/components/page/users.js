@@ -33,6 +33,6 @@ export default class Users extends React.Component {
       return (<div>Loading...</div>)
     }
 
-    return (<ArrInTable primary="status">{users}</ArrInTable>)
+    return (<ArrInTable primary="id">{users}</ArrInTable>)
   }
 }
