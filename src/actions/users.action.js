@@ -1,17 +1,10 @@
 import api from '../core/api'
-import _ from 'lodash'
+import ajaxErrorCatcher from '../core/util/ajaxErrorCatcher'
 import constants, {
    FETCH_USERS,
    SUNSURFERS_API
 } from '../constants'
 
-
-
-const ajaxErrorCatcher = function(res){
-  const json = res.json();
-  console.error('ajax error:', json);
-  return json;
-}
 
 const actionsMap = {
   [FETCH_USERS]: function fetchUsers(options) {

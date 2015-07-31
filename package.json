@@ -46,6 +46,7 @@
     "react": "^0.13.3",
     "react-router": "1.0.0-beta2",
     "reduce": "^1.0.1",
-    "redux": "^0.12.0"
+    "redux": "^0.12.0",
+    "world-countries": "^1.7.3"
   }
 }
