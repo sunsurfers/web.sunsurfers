@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
-import {map, sortBy} from 'lodash'
-import {Table} from 'react-bootstrap'
+import map from 'lodash/collection/map'
+import sortBy from 'lodash/collection/sortBy'
+import Table from 'react-bootstrap/lib/Table'
 
 
 export default class ArrInTable extends React.Component {

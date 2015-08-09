@@ -1,5 +1,6 @@
 export { default as Home } from './home'
 export { default as Users } from './users'
+export { default as Profile } from './profile'
 
 //export { default as Auth } from './auth'
 //export { default as AuthRecover } from './auth.recover'

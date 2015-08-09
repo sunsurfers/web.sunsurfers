@@ -1,7 +1,8 @@
 import {get, post} from '../core/api'
 
 import {
-   FETCH_USERS
+   FETCH_USERS,
+   FETCH_USER
 } from '../constants'
 
 const initialState = {
@@ -9,8 +10,15 @@ const initialState = {
 };
 
 const actionsMap = {
-  [FETCH_USERS]: function(state, action){
+  [FETCH_USER] (state, action) {
     return {
+      ...state,
+      list: state.list.concat([action.user])
+    }
+  },
+  [FETCH_USERS] (state, action) {
+    return {
+      ...state,
       list: action.users
     }
   }

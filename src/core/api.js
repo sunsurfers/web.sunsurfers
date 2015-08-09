@@ -13,11 +13,14 @@ var Promise = require('promise');
  * */
 
 var log = [];
-function showLog(fromEnd = true) {
+window.showLog = function showLog(fromEnd = true) {
   return fromEnd
      ? log.reverse()
      : log;
-}
+};
+
+
+var imitateLongResponse = 2000;
 
 function makeAjax(type) {
   return function (path, extra) {
@@ -26,16 +29,18 @@ function makeAjax(type) {
     });
 
     return new Promise(function (resolve, reject) {
-      transport[type](path)
-         .send(extra || {})
-         .end(function (err, res) {
-           if (err == null) {
-             resolve(res.body, res);
-           } else {
-             reject(err, res);
-             console.error('some problem with query', [err, res], [path, extra]);
-           }
-         });
+      setTimeout(function(){
+        transport[type](path)
+           .send(extra || {})
+           .end(function (err, res) {
+             if (err == null) {
+               resolve(res.body, res);
+             } else {
+               reject(err, res);
+               console.error('some problem with query', [err, res], [path, extra]);
+             }
+           });
+      }, imitateLongResponse || 0);
     });
   }
 }
@@ -46,4 +51,5 @@ module.exports = {
   get: makeAjax('get'),
   post: makeAjax('post')
   // ... put, delete, other things
+
 };

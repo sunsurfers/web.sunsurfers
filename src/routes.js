@@ -1,14 +1,15 @@
-import React from 'react'
-import { Redirect, Router, Route } from 'react-router'
+import React from "react"
+import { Redirect, Router, Route } from "react-router"
 
 import {
    Wrapper
-} from './components'
+} from "./components"
 
 import {
    Home,
-   Users
-} from './components/page'
+   Users,
+   Profile
+} from "./components/page"
 
 
 export default function (history) {
@@ -17,6 +18,7 @@ export default function (history) {
        <Route component={Wrapper}>
          <Route path="home" component={Home} />
          <Route path="users" component={Users} />
+         <Route path="profile/:nickname" component={Profile}/>
 
          <Redirect from="/" to="home" />
        </Route>
