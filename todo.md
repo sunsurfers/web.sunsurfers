@@ -2,6 +2,14 @@
 not perfect, but working
 
 
+## Инструкции:
+### заводим новую страницу
+[-] пишем в роуте
+[-] заводим нужный компонент + прописываем в index
+
+
+
+
 
 [-] redux-devtools
 
@@ -56,3 +64,5 @@ not perfect, but working
 
 посмотри redux/lib/utils/shallowEqualScalar
 стяни clientMiddleware.js с react-redux-universal-hot-example
+
+

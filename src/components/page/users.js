@@ -6,7 +6,7 @@ import React from 'react'
 import { connect } from 'redux/react'
 import { bindActionCreators } from 'redux'
 
-import usersActions from '../../actions/users.action.js'
+import {userActions} from '../../actions'
 import ArrInTable from '../dumb/arrInTable'
 
 
@@ -16,6 +16,7 @@ import constants, {
 } from '../../constants'
 
 // dirty hack for full load, if users exist from /profile
+// todo: move to store
 var firstLoad = true;
 
 @connect(function(state, props){
@@ -27,7 +28,7 @@ var firstLoad = true;
 export default class Users extends React.Component {
   render () {
     const {dispatch} = this.props;
-    const actions = bindActionCreators(usersActions, dispatch);
+    const actions = bindActionCreators(userActions, dispatch);
 
     const {users} = this.props;
     var message;

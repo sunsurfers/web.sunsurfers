@@ -1,16 +1,23 @@
-var React = require('react');
-var Icon = require('../component/icon');
-var {Link} = require('react-router');
-var userActions = require('../action/user');
+import React from 'react'
+import Icon from '../dumb/icon'
+import {Link} from 'react-router'
 
-export default class About extends React.Component {
-  send: function () {
+//import userActions from '../action/user'
+
+export default class Singin extends React.Component {
+  constructor (props) {
+    // todo: if auth == true, redirect
+
+    super(props)
+  }
+  send () {
     userActions.signIn({
       email: this.refs.email.getDOMNode().value.trim(),
       password: this.refs.password.getDOMNode().value.trim()
     });
-  },
-  render: function () {
+  }
+
+  render () {
     return (<div>
       <div className="input-group" style={{marginBottom: '20px'}}>
         <span className="input-group-addon" id="basic-addon1">

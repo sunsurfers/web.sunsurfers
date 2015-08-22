@@ -7,7 +7,7 @@ import constants, {
 } from '../constants'
 
 
-const actionsMap = {
+const userActions = {
   [FETCH_USER] (nickname) {
     return function (dispatch) {
       return api.get(`${SUNSURFERS_API}/user/${nickname}`).then(function(user){
@@ -33,4 +33,4 @@ const actionsMap = {
 
 
 
-export default actionsMap
+export default userActions

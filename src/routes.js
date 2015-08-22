@@ -8,7 +8,11 @@ import {
 import {
    Home,
    Users,
-   Profile
+   Profile,
+   Signin,
+   Signup,
+   Chat,
+   ChatChannel
 } from "./components/page"
 
 
@@ -19,6 +23,14 @@ export default function (history) {
          <Route path="home" component={Home} />
          <Route path="users" component={Users} />
          <Route path="profile/:nickname" component={Profile}/>
+
+         <Route path="signin" component={Signin} />
+         <Route path="signup" component={Signup} />
+
+         <Route path="chat" component={Chat}>
+            <Route name="channel" path=":channelName" component={ChatChannel} />
+         </Route>
+
 
          <Redirect from="/" to="home" />
        </Route>

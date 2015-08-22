@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'redux/react'
 import { bindActionCreators } from 'redux'
 
-import usersActions from '../../actions/users.action.js'
+import usersActions from '../../actions/users.actions.js'
 import find from 'lodash/collection/find'
 import map from 'lodash/collection/map'
 

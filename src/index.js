@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
   React.render(<Root history={history}/>, document.body)
 });
 
-//import actions from './actions'
-//window.actions = actions;
-
-
 import './styles/index.css';
 import '!style!css!less!bootstrap/less/bootstrap.less';
+
+
+//import './socket';

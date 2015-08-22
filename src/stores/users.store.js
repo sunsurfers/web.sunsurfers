@@ -6,26 +6,36 @@ import {
 } from '../constants'
 
 const initialState = {
-  list: []
+  list: [],
+  typing_users: [],
+  online_users: []
 };
 
-const actionsMap = {
+const usersHandlers = {
   [FETCH_USER] (state, action) {
     return {
-      ...state,
       list: state.list.concat([action.user])
     }
   },
   [FETCH_USERS] (state, action) {
     return {
-      ...state,
       list: action.users
+    }
+  },
+  ['typing-users changed'] (state, action) {
+    return {
+      typing_users: action.typing_users
+    }
+  },
+  ['online-users changed'] (state, action) {
+    return {
+      online_users: action.online_users
     }
   }
 };
 
 export default function users (state = initialState, action) {
-  const reduceFn = actionsMap[action.type];
+  const reduceFn = usersHandlers[action.type];
   if (!reduceFn) return state;
   return Object.assign({}, state, reduceFn(state, action))
 }

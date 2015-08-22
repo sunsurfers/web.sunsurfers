@@ -42,12 +42,19 @@
     "babel-runtime": "^5.8.20",
     "classnames": "^2.1.2",
     "crypto-browserify": "^3.9.14",
+    "iphone5svg": "git+ssh://git@github.com:neogeek/ios-device-svg-templates.git",
+    "jquery": "^2.1.4",
     "lodash": "^3.9.1",
     "lodash.times": "^3.0.3",
+    "moment": "^2.10.6",
     "react": "^0.13.3",
     "react-router": "1.0.0-beta2",
     "reduce": "^1.0.1",
     "redux": "^0.12.0",
+    "redux-logger": "0.0.3",
+    "redux-react-router": "^0.2.1",
+    "socket.io": "^1.3.6",
+    "socket.io-client": "^1.3.6",
     "world-countries": "^1.7.3"
   }
 }
