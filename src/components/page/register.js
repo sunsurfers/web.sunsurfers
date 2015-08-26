@@ -43,7 +43,7 @@ export default class Register extends React.Component {
     return (<div>
       {message}
 
-      <form onSubmit={this.collectFormAndSend(actions.onSubmit)}>
+      <form onSubmit={this.collectFormAndSend(actions.onSubmit)} noValidate>
         <Input label="Email" type="email"
           ref="email" onBlur={actions.onBlur.bind(null, 'email')} bsStyle={getBsStyle('email')} />
         <Input label="Nickname" type="text"
