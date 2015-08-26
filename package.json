@@ -33,7 +33,7 @@
     "less-loader": "^2.2.0",
     "promise": "^7.0.1",
     "react-bootstrap": "^0.22.5",
-    "superagent": "^1.2.0",
+    "superagent": "1.2.0",
     "transform-loader": "^0.2.2",
     "url-loader": "^0.5.5"
   },
@@ -42,7 +42,7 @@
     "babel-runtime": "^5.8.20",
     "classnames": "^2.1.2",
     "crypto-browserify": "^3.9.14",
-    "iphone5svg": "git+ssh://git@github.com:neogeek/ios-device-svg-templates.git",
+    "emitter": "0.0.1",
     "jquery": "^2.1.4",
     "lodash": "^3.9.1",
     "lodash.times": "^3.0.3",

@@ -14,9 +14,13 @@ const messagesHandlers = {
 const initialState = [];
 
 export default function messages(state = initialState, action) {
-  const reduceFn = messagesHandlers[action.type];
-  if (!reduceFn) return state;
-  return reduceFn(state, action)
+  if(typeof action !== 'undefined') {
+    const reduceFn = messagesHandlers[action.type];
+    if (!reduceFn) return state;
+    return reduceFn(state, action)
+  } else {
+    return state
+  }
 }
 
 //

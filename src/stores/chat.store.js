@@ -11,7 +11,11 @@ const chatHandlers = {
 };
 
 export default function chat (state = initialState, action) {
-  const reduceFn = chatHandlers[action.type];
-  if (!reduceFn) return state;
-  return Object.assign({}, state, reduceFn(state, action))
+  if(typeof action !== 'undefined') {
+    const reduceFn = chatHandlers[action.type];
+    if (!reduceFn) return state;
+    return Object.assign({}, state, reduceFn(state, action))
+  } else {
+    return state
+  }
 }

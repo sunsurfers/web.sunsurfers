@@ -5,7 +5,7 @@ import { Provider } from 'redux/react'
 import each from 'lodash/collection/each'
 //import toArray from 'lodash/lang/toArray'
 
-import { loggerMiddleware, thunkMiddleware } from './core/middleware'
+import { thunkMiddleware } from './core/middleware'
 
 import * as stores from './stores'
 import renderRoutes from './routes'
@@ -16,7 +16,6 @@ const dispatcher = createDispatcher(
    composeStores(stores),
       getState => [
         thunkMiddleware(getState),
-        //loggerMiddleware,
         logger({getState})
       ]
 );

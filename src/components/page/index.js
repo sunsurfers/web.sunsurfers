@@ -6,6 +6,7 @@ export { default as Signin } from './signin'
 export { default as Signup } from './signup'
 export { default as Chat } from './chat'
 export { default as ChatChannel } from './chat-channel'
+export { default as Register } from './register'
 
 
 

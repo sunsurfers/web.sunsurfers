@@ -33,6 +33,7 @@ export default class Wrapper extends React.Component {
                <Link to="/profile/marinkanamaste"> marinkanamaste</Link>
            </li>
            <li><Link to="/chat/sunsurfers">CHAT</Link></li>
+           <li><Link to="/register">register</Link></li>
          </ul>
 
          <div style={{width: screen.width, height: screen.height, margin: '0 auto', position: 'relative'}}>

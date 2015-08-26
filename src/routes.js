@@ -12,7 +12,8 @@ import {
    Signin,
    Signup,
    Chat,
-   ChatChannel
+   ChatChannel,
+   Register
 } from "./components/page"
 
 
@@ -26,6 +27,7 @@ export default function (history) {
 
          <Route path="signin" component={Signin} />
          <Route path="signup" component={Signup} />
+         <Route path="register" component={Register} />
 
          <Route path="chat" component={Chat}>
             <Route name="channel" path=":channelName" component={ChatChannel} />
