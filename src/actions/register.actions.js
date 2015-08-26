@@ -3,9 +3,9 @@ import ajaxErrorCatcher from '../core/util/ajaxErrorCatcher'
 import _ from 'lodash'
 
 const checks = {
-  'email': function(val){return val.indexOf('@').length < 0 || val.length < 255 || val.length > 4},
-  'password': function(val){return val.length === 0 || val.length < 255 || val.length > 4},
-  'nickname': function(val){return val.length === 0 || val.length < 255 || val.length > 3}
+  'email': function(val){return val.indexOf('@') >= 0 && val.length < 255 && val.length > 4;},
+  'password': function(val){return val.length !== 0 && val.length < 255 || val.length > 4},
+  'nickname': function(val){return val.length !== 0 && val.length < 255 || val.length > 3}
 };
 
 
