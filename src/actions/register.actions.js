@@ -2,8 +2,9 @@ import api from '../core/api'
 import ajaxErrorCatcher from '../core/util/ajaxErrorCatcher'
 import _ from 'lodash'
 
+const isValidDomainPartRx = /\.([a-z\.]{2,6})$/;
 const checks = {
-  'email': function(val){return val && val.length !== 0 && val.indexOf('@') >= 0 && val.test(/\.([a-z\.]{2,6})$/) && val.length < 255 && val.length > 4;},
+  'email': function(val){return val && val.length !== 0 && val.indexOf('@') >= 0 && isValidDomainPartRx.test(val) && val.length < 255 && val.length > 4;},
   'password': function(val){return val && val.length !== 0 && val.length < 255 && val.length > 4},
   'nickname': function(val){return val && val.length !== 0 && val.length < 255 && val.length > 3}
 };
