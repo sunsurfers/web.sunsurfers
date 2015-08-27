@@ -35,7 +35,11 @@ const usersHandlers = {
 };
 
 export default function users (state = initialState, action) {
-  const reduceFn = usersHandlers[action.type];
-  if (!reduceFn) return state;
-  return Object.assign({}, state, reduceFn(state, action))
+  if(typeof action !== 'undefined') {
+    const reduceFn = usersHandlers[action.type];
+    if (!reduceFn) return state;
+    return Object.assign({}, state, reduceFn(state, action));
+  } else {
+    return state;
+  }
 }
